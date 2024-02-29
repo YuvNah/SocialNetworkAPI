@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, default: mongoose } = require("mongoose");
 
 // Schema to create a user model
 const userSchema = new Schema(
@@ -18,6 +18,18 @@ const userSchema = new Schema(
         "Please fill a valid email address",
       ],
     },
+    thought: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: `Thought`,
+      },
+    ],
+    friends: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: `User`,
+      },
+    ],
   },
   {
     toJSON: {
