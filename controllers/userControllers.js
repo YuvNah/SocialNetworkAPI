@@ -11,6 +11,20 @@ module.exports = {
       res.status(500).json(err);
     }
   },
+  // Get a user (1)
+  async getSingleUser(req, res) {
+    try {
+      const user = await User.findOne({ _id: req.params.userId });
+      // .populate(`thoguhts`)
+
+      if (!user) {
+        return res.status(404).json({ message: "No User with that ID" });
+      }
+      res.jaon(user);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  },
   // Crete a User
   async createUser(req, res) {
     try {
