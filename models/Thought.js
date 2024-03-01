@@ -5,9 +5,17 @@ const thoughtSchema = new Schema(
   {
     thoughtText: {
       type: String,
-      unique: true,
       required: true,
-      trim: true,
+      minlength: 1,
+      maxlength: 280,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+    userName: {
+      type: String,
+      required: true,
     },
   },
   {

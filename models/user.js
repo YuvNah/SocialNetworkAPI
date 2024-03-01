@@ -18,7 +18,7 @@ const userSchema = new Schema(
         "Please fill a valid email address",
       ],
     },
-    thought: [
+    thoughts: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: `Thought`,
