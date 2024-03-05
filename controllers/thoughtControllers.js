@@ -50,11 +50,11 @@ module.exports = {
       );
 
       if (!thought) {
-        res.status(404).jason({ message: "No thought with this ID!" });
+        res.status(404).json({ message: "No thought with this ID!" });
       }
-      res.jason(thought);
+      res.json(thought);
     } catch (err) {
-      res.status(500).jason(err);
+      res.status(500).json(err);
     }
   },
 
@@ -66,10 +66,10 @@ module.exports = {
       });
 
       if (!thought) {
-        res.status(404).jason({ message: "No thought with that ID" });
+        res.status(404).json({ message: "No thought with that ID" });
       }
     } catch (err) {
-      res.status(500).jason(err);
+      res.status(500).json(err);
     }
   },
 };
